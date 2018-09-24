@@ -7,7 +7,7 @@ const url = 'https://ava-dog-tag.wikia.com/wiki/Category:Weapons';
 
 module.exports.run = async (bot, message, args) => {
   // CODE HERE
-  text = """```fix
+  text = `\`\`\`fix
 -------------------------------------------------------------------------------------------
 ---------------------------------------Help Commands---------------------------------------
 -------------------------------------------------------------------------------------------```
@@ -20,7 +20,7 @@ __**AVA Dog Tag commands:**__
 # .maps
 > Presents you a simple list of all the maps available
 # .map <map_name_here>
-> Shows all the info about the map you select```"""
+> Shows all the info about the map you select\`\`\``
   message.author.send(text);
 }
 
