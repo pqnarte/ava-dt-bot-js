@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
           var j = 0;
           var content = $('.mw-content-ltr').find('li').each(function(i,elem) {
             text += $(this).text()+'\n'
-            text2 += '#https://ava-dog-tag.wikia.com'+$(this).children().attr('href')+'\n';
+            text2 += 'https://ava-dog-tag.wikia.com'+$(this).children().attr('href')+'\n';
           });
           data[i] = text;
           links[i] = text2;
@@ -54,11 +54,11 @@ module.exports.run = async (client, message, args) => {
         weapons = data[category_page-1].split('\n')
         weapons.pop()
         pages = Math.ceil(weapons.length/5)
-        if(weapons.length > 5){
-          embed.setDescription(weapons.slice(0,5).join('\n'))
-        }
-        else{
-          embed.setDescription(weapons.join('\n'))
+        urls = links[category_page-1].split('\n')
+        urls.pop()
+        var desc = "";
+        for (var i = 0; i < 5 && i < weapons.length  ; i++){
+          desc += `[${urls[i]}]${weapons[i]}` 
         }
         embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
       message.channel.send(embed).then(msg => {
@@ -94,7 +94,11 @@ module.exports.run = async (client, message, args) => {
             page--;
             lower = (page-1)*max_per_page;
             higher = page*max_per_page;
-            embed.setDescription(weapons.slice(lower,higher))
+            var desc = "";
+            for (var i = lower; i < higher && i < weapons.length ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -104,7 +108,11 @@ module.exports.run = async (client, message, args) => {
             page++;
             lower = (page-1)*max_per_page;
             higher = page*max_per_page;
-            embed.setDescription(weapons.slice(lower,higher))
+            var desc = "";
+            for (var i = lower; i < higher && i < weapons.length ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -118,7 +126,15 @@ module.exports.run = async (client, message, args) => {
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
-            embed.setDescription(weapons.slice(0,max_per_page).join('\n'))
+            urls = links[category_page-1].split('\n')
+            urls.pop()
+            var desc = "";
+            for (var i = 0; i < 5 && i < weapons.length  ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
+            embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
+            msg.edit(embed);
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -132,7 +148,13 @@ module.exports.run = async (client, message, args) => {
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
-            embed.setDescription(weapons.slice(0,max_per_page).join('\n'))
+            urls = links[category_page-1].split('\n')
+            urls.pop()
+            var desc = "";
+            for (var i = 0; i < 5 && i < weapons.length  ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -146,7 +168,13 @@ module.exports.run = async (client, message, args) => {
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
-            embed.setDescription(weapons.slice(0,max_per_page).join('\n'))
+            urls = links[category_page-1].split('\n')
+            urls.pop()
+            var desc = "";
+            for (var i = 0; i < 5 && i < weapons.length  ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -160,7 +188,13 @@ module.exports.run = async (client, message, args) => {
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
-            embed.setDescription(weapons.slice(0,max_per_page).join('\n'))
+            urls = links[category_page-1].split('\n')
+            urls.pop()
+            var desc = "";
+            for (var i = 0; i < 5 && i < weapons.length  ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
@@ -174,7 +208,13 @@ module.exports.run = async (client, message, args) => {
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
-            embed.setDescription(weapons.slice(0,max_per_page).join('\n'))
+            urls = links[category_page-1].split('\n')
+            urls.pop()
+            var desc = "";
+            for (var i = 0; i < 5 && i < weapons.length  ; i++){
+              desc += `[${urls[i]}]${weapons[i]}` 
+            }
+            embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
