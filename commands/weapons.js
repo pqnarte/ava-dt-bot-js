@@ -62,17 +62,17 @@ module.exports.run = async (client, message, args) => {
           embed.setDescription(weapons.join('\n'))
         }
         embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
-      message.channel.send(embed).then(msg => {
-        const pointman_icon = client.emojis.get("454611806804246528");
-        const rifleman_icon = client.emojis.get("454611807202705408");
-        const sniper_icon = client.emojis.get("454611807059968013");
-        msg.react('◀').then( r => {
-          msg.react('▶').then( r => {
-            msg.react(pointman_icon.id).then( r => {
-              msg.react(rifleman_icon.id).then( r => {
-                msg.react(sniper_icon.id).then( r => {
-                  msg.react('🔫').then( r => {
-                    msg.react('🔪').then( r => {
+      message.channel.send(embed).then(async msg => {
+        const pointman_icon = await client.emojis.get("454611806804246528");
+        const rifleman_icon = await client.emojis.get("454611807202705408");
+        const sniper_icon = await client.emojis.get("454611807059968013");
+        await msg.react('◀')
+        await msg.react('▶')
+        await msg.react(pointman_icon.id)
+        await msg.react(rifleman_icon.id)
+        await msg.react(sniper_icon.id)
+        await msg.react('🔫')
+        await msg.react('🔪')
 
           const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
           const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
@@ -179,10 +179,6 @@ module.exports.run = async (client, message, args) => {
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
             msg.edit(embed);
           })
-
-
-
-        })})})})})})});
         setTimeout(function(){ msg.clearReactions() }, max_time_ms);
       })
       setTimeout(function(){ msg.delete() }, max_time_ms);
