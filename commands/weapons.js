@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
         });
       }
 
-      msg.edit('Found them!\n♠ => Pointman\n♥ => Rifleman\n♦ => Sniper\n♣ => Secondary\n🔪 => Melee\nYou won\'t be able to change pages after 1 minute.');
+      msg.edit('Found them!\nYou won\'t be able to change pages after 1 minute.');
       let category_pages = categories;
       let pages = 1;
 
@@ -62,22 +62,22 @@ module.exports.run = async (client, message, args) => {
         }
         embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
       message.channel.send(embed).then(msg => {
-        // const pointman_icon = bot.emojis.get("454611806804246528");
-        // const rifleman_icon = bot.emojis.get("454611807202705408");
-        // const sniper_icon = bot.emojis.get("454611807059968013");
+        const pointman_icon = bot.emojis.get("454611806804246528");
+        const rifleman_icon = bot.emojis.get("454611807202705408");
+        const sniper_icon = bot.emojis.get("454611807059968013");
         msg.react('◀').then( r => {
           msg.react('▶').then( r => {
-            msg.react('♠').then( r => {
-              msg.react('♥').then( r => {
-                msg.react('♦').then( r => {
+            msg.react(pointman_icon.id).then( r => {
+              msg.react(rifleman_icon.id).then( r => {
+                msg.react(sniper_icon.id).then( r => {
                   msg.react('🔫').then( r => {
                     msg.react('🔪').then( r => {
 
           const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
           const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
-          const PointmanFilter = (reaction, user) => reaction.emoji.name === '♠' && user.id === message.author.id;
-          const RiflemanFilter = (reaction, user) => reaction.emoji.name === '♥' && user.id === message.author.id;
-          const SniperFilter = (reaction, user) => reaction.emoji.name === '♦' && user.id === message.author.id;
+          const PointmanFilter = (reaction, user) => reaction.emoji.name === pointman_icon.id && user.id === message.author.id;
+          const RiflemanFilter = (reaction, user) => reaction.emoji.name === rifleman_icon.id && user.id === message.author.id;
+          const SniperFilter = (reaction, user) => reaction.emoji.name === sniper_icon.id && user.id === message.author.id;
           const SecondaryFilter = (reaction, user) => reaction.emoji.name === '🔫' && user.id === message.author.id;
           const MeleeFilter = (reaction, user) => reaction.emoji.name === '🔪' && user.id === message.author.id;
 
