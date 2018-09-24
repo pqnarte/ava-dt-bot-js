@@ -58,7 +58,7 @@ module.exports.run = async (client, message, args) => {
         urls.pop()
         var desc = "";
         for (var i = 0; i < 5 && i < weapons.length  ; i++){
-          desc += `[${urls[i]}]${weapons[i]}\n` 
+          await desc += `[${urls[i]}](${weapons[i]})\n` 
         }
         embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
       message.channel.send(embed).then(msg => {
@@ -96,7 +96,7 @@ module.exports.run = async (client, message, args) => {
             higher = page*max_per_page;
             var desc = "";
             for (var i = lower; i < higher && i < weapons.length ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -110,7 +110,7 @@ module.exports.run = async (client, message, args) => {
             higher = page*max_per_page;
             var desc = "";
             for (var i = lower; i < higher && i < weapons.length ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -130,7 +130,7 @@ module.exports.run = async (client, message, args) => {
             urls.pop()
             var desc = "";
             for (var i = 0; i < 5 && i < weapons.length  ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -152,7 +152,7 @@ module.exports.run = async (client, message, args) => {
             urls.pop()
             var desc = "";
             for (var i = 0; i < 5 && i < weapons.length  ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -172,7 +172,7 @@ module.exports.run = async (client, message, args) => {
             urls.pop()
             var desc = "";
             for (var i = 0; i < 5 && i < weapons.length  ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -192,7 +192,7 @@ module.exports.run = async (client, message, args) => {
             urls.pop()
             var desc = "";
             for (var i = 0; i < 5 && i < weapons.length  ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
@@ -212,7 +212,7 @@ module.exports.run = async (client, message, args) => {
             urls.pop()
             var desc = "";
             for (var i = 0; i < 5 && i < weapons.length  ; i++){
-              desc += `[${urls[i]}]${weapons[i]}\n` 
+              desc += `[${urls[i]}](${weapons[i]})\n` 
             }
             embed.setDescription(desc)
             embed.setFooter(`Page ${page} of ${pages} - ${category_pages[category_page-1]}`)
