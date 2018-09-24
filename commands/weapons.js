@@ -75,9 +75,9 @@ module.exports.run = async (client, message, args) => {
 
           const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
           const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
-          const PointmanFilter = (reaction, user) => reaction.emoji.name === pointman_icon.id && user.id === message.author.id;
-          const RiflemanFilter = (reaction, user) => reaction.emoji.name === rifleman_icon.id && user.id === message.author.id;
-          const SniperFilter = (reaction, user) => reaction.emoji.name === sniper_icon.id && user.id === message.author.id;
+          const PointmanFilter = (reaction, user) => reaction.emoji.id === pointman_icon.id && user.id === message.author.id;
+          const RiflemanFilter = (reaction, user) => reaction.emoji.id === rifleman_icon.id && user.id === message.author.id;
+          const SniperFilter = (reaction, user) => reaction.emoji.id === sniper_icon.id && user.id === message.author.id;
           const SecondaryFilter = (reaction, user) => reaction.emoji.name === '🔫' && user.id === message.author.id;
           const MeleeFilter = (reaction, user) => reaction.emoji.name === '🔪' && user.id === message.author.id;
 
