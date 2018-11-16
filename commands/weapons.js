@@ -115,7 +115,7 @@ module.exports.run = async (client, message, args) => {
             page = 1;
             category_page = 1;
             embed.setTitle('**'+category_pages[category_page-1]+'**')
-            embed.setURL(url+category_pages[page-1])
+            embed.setURL(url+category_pages[category_page-1])
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
@@ -129,7 +129,7 @@ module.exports.run = async (client, message, args) => {
             page = 1;
             category_page = 2;
             embed.setTitle('**'+category_pages[category_page-1]+'**')
-            embed.setURL(url+category_pages[page-1])
+            embed.setURL(url+category_pages[category_page-1])
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
@@ -143,7 +143,7 @@ module.exports.run = async (client, message, args) => {
             page = 1;
             category_page = 3;
             embed.setTitle('**'+category_pages[category_page-1]+'**')
-            embed.setURL(url+category_pages[page-1])
+            embed.setURL(url+category_pages[category_page-1])
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
@@ -157,7 +157,7 @@ module.exports.run = async (client, message, args) => {
             page = 1;
             category_page = 4;
             embed.setTitle('**'+category_pages[category_page-1]+'**')
-            embed.setURL(url+category_pages[page-1])
+            embed.setURL(url+category_pages[category_page-1])
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
@@ -171,7 +171,7 @@ module.exports.run = async (client, message, args) => {
             page = 1;
             category_page = 5;
             embed.setTitle('**'+category_pages[category_page-1]+'**')
-            embed.setURL(url+category_pages[page-1])
+            embed.setURL(url+category_pages[category_page-1])
             weapons = data[category_page-1].split('\n')
             weapons.pop()
             pages = Math.ceil(weapons.length/max_per_page)
