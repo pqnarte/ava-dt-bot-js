@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
           var j = 0;
           var content = $('.category-page__members').find('a').each(function(i,elem) {
             //text += $(this).text()+'\n'
-            text += '['+$(this).text()+'](https://ava-dog-tag.wikia.com'+$(this).children().attr('href')+')\n'
+            text += '['+$(this).text()+'](https://ava-dog-tag.wikia.com'+$(this).attr('href')+')\n'
             text2 += 'https://ava-dog-tag.wikia.com'+$(this).attr('href')+'\n';
           });
           data[i] = text;
