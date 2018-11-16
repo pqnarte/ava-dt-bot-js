@@ -25,10 +25,10 @@ module.exports.run = async (bot, message, args) => {
     await rp(options)
       .then(($) => {
         var j = 0;
-        var content = $('.mw-content-ltr').find('li').each(function(i,elem) {
+        var content = $('.category-page__members').find('a').each(function(i,elem) {
           if ($(this).text().toUpperCase().includes(args.join(' ').toUpperCase())){
           data.push($(this).text())
-          links.push('https://ava-dog-tag.wikia.com'+$(this).children().attr('href'));}
+          links.push('https://ava-dog-tag.wikia.com'+$(this).attr('href'));}
         });
       })
       .catch(function (err) {
