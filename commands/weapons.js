@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
           text = "";
           text2 = "";
           var j = 0;
-          var content = $('.mw-content-ltr').find('li').each(function(i,elem) {
+          var content = $('.category-page__members').find('a').each(function(i,elem) {
             //text += $(this).text()+'\n'
             text += '['+$(this).text()+'](https://ava-dog-tag.wikia.com'+$(this).children().attr('href')+')\n'
             text2 += 'https://ava-dog-tag.wikia.com'+$(this).children().attr('href')+'\n';
