@@ -69,6 +69,7 @@ module.exports.run = async (client, message, args) => {
             embed.setDescription(maps.join('\n'))
             embed.setFooter(`Page ${page} of ${pages.length}`)
             embed.setTitle('**'+pages[page-1]+'**')
+            embed.setURL(url+pages[page-1])
             msg.edit(embed);
           })
 
@@ -80,6 +81,7 @@ module.exports.run = async (client, message, args) => {
             embed.setDescription(maps.join('\n'))
             embed.setFooter(`Page ${page} of ${pages.length}`)
             embed.setTitle('**'+pages[page-1]+'**')
+            embed.setURL(url+pages[page-1])
             msg.edit(embed);
           })
 
