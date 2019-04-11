@@ -66,7 +66,8 @@ module.exports.run = async (bot, message, args) => {
                     var j = 0;
                     image_url = "";
                     var content = $('.mw-content-ltr').find('figure').each(function(i,elem) {
-                      image_url = $(this).children().attr('href').attr('src');
+                      image_url = $(this).children().attr('href').children().attr('src')
+                      console.log(image_url)
                     });
 
                     const embed = new Discord.RichEmbed()
